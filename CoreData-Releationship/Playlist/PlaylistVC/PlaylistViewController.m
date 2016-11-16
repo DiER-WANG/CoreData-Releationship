@@ -235,7 +235,7 @@
         
         [alert addAction:[UIAlertAction actionWithTitle:@"从数据库中删除歌曲" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             __strong typeof(weak_playtools) strong_playtools = weak_playtools;
-            [strong_playtools deleteSongs:@[@{@"url": alert.textFields.lastObject.text}] withReult:^(NSArray *failureArr, NSError *error) {
+            [strong_playtools deleteSongs:@[alert.textFields.lastObject.text] withReult:^(NSArray *failureArr, NSError *error) {
                 NSString *msg = @"SUCCESS";
                 if (error) {
                     msg = error.localizedDescription;
